@@ -3,6 +3,7 @@
 script to digest a list of domains  (in example.com format) and check if it is responding, if it has a redirect and if it is parked
 
 pseudocode:
+
 for each domain in text file, 
   add "https://www." to front of domain if it is missing
   
