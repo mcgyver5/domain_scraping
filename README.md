@@ -4,17 +4,17 @@ script to digest a list of domains  (in example.com format) and check if it is r
 
 pseudocode:
 for each domain in text file, 
-add "https://www." to front of domain
-use python library to issue a GET request
+  add "https://www." to front of domain if it is missing
+  use python library to issue a GET request
 
-if error (such as timeout), make note of that
+  if error (such as timeout), save error to list of result objects
 
-if response is 200, check for a javascript redirect in content of page
-  if yes:  make note of redirect
-  if no:   look for keywords associated with parked domains
+  if response is 200, check for a javascript redirect in content of page
+    if yes:  make note of redirect
+    if no:   look for keywords associated with parked domains
 
-if response is 301 or 302, make note of redirect location
+  if response is 301 or 302, make note of redirect location
 
-do another pass on redirected locations and check if those are parked 
+  do another pass on redirected locations and check if those are parked 
 
-print results out to text file
+print results out to text / csv file
