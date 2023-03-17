@@ -5,6 +5,7 @@ script to digest a list of domains  (in example.com format) and check if it is r
 pseudocode:
 for each domain in text file, 
   add "https://www." to front of domain if it is missing
+  
   use python library to issue a GET request
 
   if error (such as timeout), save error to list of result objects
